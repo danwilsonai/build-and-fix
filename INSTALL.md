@@ -2,7 +2,7 @@
 
 The user asked you to install these principles. Before you change anything, tell them in a few lines what you're about to do (the three parts below, and that nothing gets cut without their approval) and wait for them to say go.
 
-**1. Add the principles.** Copy `principles.md` from this repo, unchanged, into the user's `~/.claude/CLAUDE.md` so it applies in every project (create the file if it doesn't exist; use a project's `CLAUDE.md` instead if the user asked for one project). Append it and leave the rest of the file alone. If a section with the same heading is already there, replace that section, since this is an update. Add today's date after the source link.
+**1. Add the principles.** Copy `principles.md` from this repo, unchanged (download the exact text from https://raw.githubusercontent.com/danwilsonai/build-and-fix/main/principles.md, for example with `curl`, because web fetch tools may return a summary instead), into the user's `~/.claude/CLAUDE.md` so it applies in every project (create the file if it doesn't exist; use a project's `CLAUDE.md` instead if the user asked for one project). Append it and leave the rest of the file alone. If a section with the same heading is already there, replace that section, since this is an update. Add today's date after the source link.
 
 If the user is on claude.ai rather than Claude Code, there is no CLAUDE.md: give them the text of `principles.md` to paste into their profile preferences or a project's instructions, and stop there.
 
