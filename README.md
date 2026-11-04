@@ -79,11 +79,12 @@ Never polish a step that should have been deleted. And automate last, because a 
 
 ## From real use
 
-Measured on one production setup that runs a business through AI agents:
+Measured on one production setup that runs a business through AI agents, over a few months of passes:
 
 - **A writing process rebuilt as a goal plus a few boundaries.** Thirteen instruction files of gates, checklists, rubrics and section maps (about 47,900 words) were replaced by four files (about 3,600 words), roughly 93% less for the agent to follow.
 - **Grading with yes/no checks instead of a rubric.** A 100-point rubric with worked examples was replaced by six yes/no checks and no examples to copy. The first real run produced 12 clean outputs out of 17.
-- **Background jobs loading only what they use.** Dropping instruction files, memory and tool lists that never changed a scheduled job's output cut a two-turn review from 154,026 to 81,968 tokens of context, with the same verdict. That change came before this list was written down, but it's the same delete-first idea.
+- **Deleting a step instead of tuning it.** One weekly scheduled job was spending 10 agent sessions and about 4.68 million tokens of context. Four of those sessions, about 1.85 million tokens, went to generating and grading a decorative image. Deleting that step removed about 40% of the run outright.
+- **Background jobs loading only what they use.** Scheduled agent runs were loading every instruction file, the memory and every tool on each turn, none of which changed their output. Dropping them took the draft step from 82K to 33K tokens per turn (60% less) and the review step from 84K to 27K (68% less), saved on every turn of every run.
 - **The install's own audit.** Moving on-demand detail out of `CLAUDE.md`, deleting a duplicate section and removing a tool server nobody needed took the estimated load at the start of every session from about 19,050 to about 16,000 tokens.
 
 The biggest savings came from deleting whole processes and rules rather than trimming them, which is step 3 doing most of the work.
