@@ -77,6 +77,17 @@ So every fix gets tried twice: on the case that broke, and on one that was alrea
 
 Never polish a step that should have been deleted. And automate last, because a scheduled job locks in whatever waste it started with. If a process is bad, automating it just means it runs badly every night instead of whenever someone remembers to run it.
 
+## From real use
+
+Measured on one production setup that runs a business through AI agents:
+
+- **A writing process rebuilt as a goal plus a few boundaries.** Thirteen instruction files of gates, checklists, rubrics and section maps (about 47,900 words) were replaced by four files (about 3,600 words), roughly 93% less for the agent to follow.
+- **Grading with yes/no checks instead of a rubric.** A 100-point rubric with worked examples was replaced by six yes/no checks and no examples to copy. The first real run produced 12 clean outputs out of 17.
+- **Background jobs loading only what they use.** Dropping instruction files, memory and tool lists that never changed a scheduled job's output cut a two-turn review from 154,026 to 81,968 tokens of context, with the same verdict. That change came before this list was written down, but it's the same delete-first idea.
+- **The install's own audit.** Moving on-demand detail out of `CLAUDE.md`, deleting a duplicate section and removing a tool server nobody needed took the estimated load at the start of every session from about 19,050 to about 16,000 tokens.
+
+The biggest savings came from deleting whole processes and rules rather than trimming them, which is step 3 doing most of the work.
+
 ## The pattern
 
 Models are good enough now that the instructions are usually the weakest part of the system. So the job is mostly giving a clear goal and the few real boundaries, then getting out of the way, and when something goes wrong, finding the instruction that caused it before writing a new one.
