@@ -97,3 +97,7 @@ The biggest savings came from deleting whole processes and rules rather than tri
 Models are good enough now that the instructions are usually the weakest part of the system. So the job is mostly giving a clear goal and the few real boundaries, then getting out of the way, and when something goes wrong, finding the instruction that caused it before writing a new one.
 
 To catch those problems without waiting to notice them yourself, see [dreaming](https://github.com/danwilsonai/dreaming): a scheduled review of your agents' sessions and processes that proposes fixes the same way.
+
+## License
+
+[CC BY 4.0](LICENSE): use it, adapt it and share it, including commercially, as long as you credit https://github.com/danwilsonai/build-and-fix.
