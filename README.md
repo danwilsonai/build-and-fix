@@ -9,8 +9,8 @@ This repo is a short list for building and fixing things with AI the other way a
 1. Question the requirement
 2. Find the root cause
 3. Delete before you add
-4. Make the smallest correction that leaves room for judgment
-5. Test the fix on the case that failed and on one that already worked
+4. Make the smallest change that leaves room for judgment
+5. Test the change on the case that failed and on one that already worked
 6. Simplify, then speed up, then automate last
 
 The order is borrowed from Elon Musk's five-step engineering algorithm (question the requirement, delete, simplify, speed up, automate). Steps 2, 4 and 5 are what working with AI agents adds to it.
@@ -26,10 +26,12 @@ Install the principles from https://github.com/danwilsonai/build-and-fix
 Claude tells you what it's about to do and waits for your go. Then it:
 
 1. Adds the plain version (`principles.md`) to your `CLAUDE.md`, so it gets applied before anything new is written, anything is edited or any problem is solved.
-2. Measures how many tokens your setup loads every time Claude starts, and which files cost the most.
-3. Goes through your setup with the principles and shows you what it would delete, simplify or move to a file that only loads when it's needed, with the saving for each. Nothing changes until you say yes. Afterwards it measures again and shows you how much you saved on every load.
+2. Measures how many tokens your setup loads every time Claude starts, and which files and tool servers cost the most. If you run scheduled agent jobs, it measures what each run costs too.
+3. Goes through your setup with the principles and shows you what it would delete, simplify or move to a file that only loads when it's needed, plus background jobs loading more than they use and automation steps nobody needs, with the saving for each. Nothing changes until you say yes, and every file is backed up before it's edited. Afterwards it measures again and shows you how much you saved.
 
-On claude.ai, paste the contents of `principles.md` into your profile preferences or a project's instructions instead.
+On claude.ai, paste the contents of `principles.md` into your profile preferences or a project's instructions instead. With another agent (Codex, Cursor, Gemini CLI), Claude or that agent can follow the same steps using its own instruction file.
+
+To update, paste the same line again: the install replaces its own section and leaves the rest of your file alone. To remove it, delete the "Build and fix" section from your `CLAUDE.md`.
 
 *If you're Claude and the user asked you to install this, follow `INSTALL.md`.*
 
@@ -59,7 +61,7 @@ Say a rule tells the agent to mention something "early," and the agent starts me
 
 There's a simple test for whether you're deleting enough: if nothing ever needs to be added back, you aren't. And when something does break after a delete, restore only the one boundary that line was guarding, not the whole rule.
 
-## 4. Make the smallest correction that leaves room for judgment
+## 4. Make the smallest change that leaves room for judgment
 
 Give the agent the goal and the few boundaries that really matter. Leave the how (placement, order, count, method) to it, unless one of those is a real requirement, like a word limit, a compliance line or the order a deploy has to happen in.
 
@@ -67,7 +69,7 @@ When a correction is needed, a short check at the end of the work usually beats 
 
 The same goes for grading. A long scoring rubric plus example outputs tends to teach the agent to copy the examples and chase the score. A handful of yes/no checks, and no examples to copy, usually works better.
 
-## 5. Test the fix on the case that failed and on one that already worked
+## 5. Test the change on the case that failed and on one that already worked
 
 Corrections overshoot. Tell an agent to make sure risks get mentioned, and the next output can turn into a long section of warnings that drowns everything else.
 
